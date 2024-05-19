@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head title="Password Generator">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self';"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Generator</h1>
+      <form id="password-form">
+        <div>
+          <label for="length">Password Length:</label>
+          <input
+            type="number"
+            id="length"
+            name="length"
+            min="8"
+            max="128"
+            value="32"
+            aria-labelledby="length-label"
+          />
+        </div>
+        <br />
+        <div>
+          <input
+            type="checkbox"
+            id="uppercase"
+            checked
+            aria-labelledby="uppercase-label"
+          />
+          <label id="uppercase-label" for="uppercase"
+            >Include Uppercase Letters</label
+          >
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="lowercase"
+            checked
+            aria-labelledby="lowercase-label"
+          />
+          <label id="lowercase-label" for="lowercase"
+            >Include Lowercase Letters</label
+          >
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="numbers"
+            checked
+            aria-labelledby="numbers-label"
+          />
+          <label id="numbers-label" for="numbers">Include Numbers</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="special"
+            checked
+            aria-labelledby="special-label"
+          />
+          <label id="special-label" for="special"
+            >Include Special Characters</label
+          >
+        </div>
+        <br />
+        <br />
+        <div class="action">
+          <button type="button" id="generate-button">Generate Password</button>
+          <button type="button" id="reset-button">Reset Password</button>
+          <button type="button" id="copy-button">Copy Password</button>
+        </div>
+      </form>
+      <div id="result" aria-live="polite">
+        <h5>Generated Password:</h5>
+        <textarea name="password" id="password" readonly rows="5"></textarea>
+        <!-- <p id="password"></p> -->
+        <!-- <div id="password-info">
+          <p id="length-info"></p>
+          <p id="uppercase-info"></p>
+          <p id="lowercase-info"></p>
+          <p id="numbers-info"></p>
+          <p id="special-info"></p>
+        </div> -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
