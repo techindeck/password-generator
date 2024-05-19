@@ -46,19 +46,25 @@ Check out the live demo [here](https://password-sepia.vercel.app).
    npm install
    ```
 
-4. Generate SSL certificates (optional, for HTTPS):
-
-    ```bash
-   npm run cert
-   ```
-
-5. Start the Server:
+4. Start the Server:
 
   ```bash
-   npm start
+   npm run dev
    ```
 
-6. Open your browser and go to `https://localhost:3000` to use tge application
+5. Start the Server: Open your browser and go to `https://localhost:3000` to use tge application
+
+6. To build the Server:
+
+  ```bash
+   npm run build
+   ```
+
+7. To see the production server preview:
+
+  ```bash
+   npm run preview
+   ```
 
 ## Usage
 
