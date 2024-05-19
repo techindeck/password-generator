@@ -17,7 +17,7 @@ A web-based application for generating strong and secure passwords. This tool al
 
 ## Live Demo
 
-Check out the live demo [here](https://password-sepia.vercel.app).
+Check out the live demo [here](https://password-generator.techindeck.com/).
 
 ## Getting Started
 
