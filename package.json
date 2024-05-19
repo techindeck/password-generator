@@ -1,11 +1,14 @@
 {
   "name": "password-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A web-based password generator for creating secure, customizable passwords.",
   "main": "server.js",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "cert": "openssl req -nodes -new -x509 -keyout server.key -out server.cert"
   },
   "keywords": [
@@ -21,6 +24,10 @@
   "dependencies": {
     "express": "^4.19.2",
     "helmet": "^7.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
   },
   "repository": {
     "type": "git",

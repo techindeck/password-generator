@@ -4,7 +4,7 @@ A web-based application for generating strong and secure passwords. This tool al
 
 ## Features
 
-- Customizable password length (8-128 characters)
+- Customizable password length
 - Options to include/exclude:
   - Uppercase letters
   - Lowercase letters
@@ -13,14 +13,23 @@ A web-based application for generating strong and secure passwords. This tool al
 - Easy-to-use interface
 - Password copy functionality with visual feedback
 - Secure password generation using the `crypto` API
+- **Privacy assurance**: All generated passwords are created locally and are **not
 
-<!-- ## Live Demo
+## Live Demo
 
-Check out the live demo [here](https://spdocumentad.github.io/password-generator). -->
+Check out the live demo [here](https://password-sepia.vercel.app).
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
 
 ## Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/techindeck/password-generator.git
    ```
@@ -57,7 +66,8 @@ Check out the live demo [here](https://spdocumentad.github.io/password-generator
 2. Set your desired password length.
 3. Select the character sets you want to include in the password.
 4. Click the "Generate Password" button to generate a password.
-5. Click the "Copy" button to copy the password to your clipboard.
+5. Click the "Reset Password" button to reset the action.
+6. Click the "Copy" button to copy the password to your clipboard.
 
 ## Project Structure
 
@@ -65,12 +75,17 @@ Check out the live demo [here](https://spdocumentad.github.io/password-generator
 password-generator/
 │
 ├── public/
-│   ├── index.html
-│   ├── styles.css
-│   └── script.js
-│── server.js
+│   └── techindeck.svg
+├── src/
+│   ├── action.ts
+│   ├── main.ts
+│   ├── style.css
+│   └── vite-env.d.ts
+│── index.html
 │── package.json
 │── package-lock.json
+│── tsconfig.json
+│── gitignore
 │── README.md
 └── LICENSE
 

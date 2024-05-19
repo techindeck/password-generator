@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head title="Password Generator">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Password Generator</title>
-    <link rel="stylesheet" href="styles.css" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self';"
-    />
-  </head>
-  <body>
-    <div class="container">
+import './style.css';
+import {
+  generatePassword,
+  copyPassword,
+  resetPassword,
+  InputData,
+} from './action.ts';
+import techindeckLogo from '/techindeck.svg';
+
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+     <div class="container">
       <h1>Password Generator</h1>
       <form id="password-form">
         <div>
@@ -21,7 +18,6 @@
             id="length"
             name="length"
             min="8"
-            max="128"
             value="32"
             aria-labelledby="length-label"
           />
@@ -79,7 +75,7 @@
       </form>
       <div id="result" aria-live="polite">
         <h5>Generated Password:</h5>
-        <textarea name="password" id="password" readonly rows="5"></textarea>
+        <textarea name="password" id="password" readonly rows="5" placeholder="click 'Generate Password' to generate a password"></textarea>
         <!-- <p id="password"></p> -->
         <!-- <div id="password-info">
           <p id="length-info"></p>
@@ -89,7 +85,39 @@
           <p id="special-info"></p>
         </div> -->
       </div>
+      
     </div>
-    <script src="script.js"></script>
-  </body>
-</html>
+    <div id="footer">
+      <span>Developed by</span>
+      <a
+        href="https://www.linkedin.com/company/techindeck"
+        target="_blank"
+        title="Technology Innovation Deck"
+        >
+        <img width="50" src=${techindeckLogo} alt="Techindeck" />
+        </a
+      >
+    </div>
+`;
+
+const inputData = {
+  controls: {
+    lengthInput: document.getElementById('length') as HTMLInputElement,
+    uppercaseInput: document.getElementById('uppercase') as HTMLInputElement,
+    lowercaseInput: document.getElementById('lowercase') as HTMLInputElement,
+    numbersInput: document.getElementById('numbers') as HTMLInputElement,
+    specialCharInput: document.getElementById('special') as HTMLInputElement,
+  },
+  passwordSelector: document.getElementById('password') as HTMLTextAreaElement,
+} as InputData;
+const generateButton = document.getElementById(
+    'generate-button'
+  ) as HTMLButtonElement,
+  resetButton = document.getElementById('reset-button') as HTMLButtonElement,
+  copyButton = document.getElementById('copy-button') as HTMLButtonElement;
+
+generatePassword(generateButton, inputData);
+
+copyPassword(copyButton, inputData.passwordSelector);
+
+resetPassword(resetButton, inputData);
