@@ -1,18 +1,33 @@
 {
   "name": "password-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "A web-based password generator for creating secure, customizable passwords.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "cert": "openssl req -nodes -new -x509 -keyout server.key -out server.cert"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "password",
+    "generator",
+    "security",
+    "password-generator",
+    "express",
+    "crypto"
+  ],
+  "author": "Techindeck",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.19.2",
     "helmet": "^7.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/techindeck/password-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/techindeck/password-generator/issues"
+  },
+  "homepage": "https://github.com/techindeck/password-generator#readme"
 }
